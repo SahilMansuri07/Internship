@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <section class="main-section">
+      <header>
+        <nav class="navbaar">
+          <div class="LOGO">LOGO</div>
+          <div class="nav-links">
+            <a href="Task2.html">Task 1 </a> |
+            <a href="Task1.html">Task 2 </a>
+          </div>
+        </nav>
+      </header>
+      <!-- side baar section  -->
+      <section class="body-section">
+        <div class="sidebar">
+          <aside>
+            <h2>Sidebar</h2>
+            <p>supported sidebaar links</p>
+            <ul class="sidebar-links">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- middle content section -->
+
+        <div class="content">
+          <article>
+            <h1>HTML IFrame youtube Video</h1>
+            <p>
+              Lorem ipsum dolor, sit amet
+              <strike>consectetur adipisicing elit.</strike> Quibusdam iure
+              omnis consequuntur incidunt eveniet. Cumque, Quibusdam iure omnis
+              consequuntur incidunt eveniet. Cumque, corrupti saepe
+              <strong
+                >exercitationem eaque, facilis deleniti omnis, quos</strong
+              >
+              beatae facere officia inventore tempor beatae facere officia
+              inventore tempor <em>laborum. Labore,</em>
+              <u>voluptas Lorem ipsum</u>, dolor sit amet consectetur
+              adipisicing elit
+            </p>
+            <img
+              src="https://images.unsplash.com/photo-1602922960044-d48ce791d3c0?q=80&w=1165&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=" mountain image"
+              width="40%"
+              height="60%"
+            />
+            <!-- <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/uCtzjfZHIok?si=rAfW4R0DdMkiWV-m"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe> -->
+          </article>
+        </div>
+        <div class="content">
+          <article>
+            <h1>HTML Normal video</h1>
+            <p>
+              Lorem ipsum dolor, sit amet
+              <strike>consectetur adipisicing elit.</strike> Quibusdam iure
+              omnis consequuntur incidunt eveniet. Cumque, Quibusdam iure omnis
+              consequuntur incidunt eveniet. Cumque, corrupti saepe
+              <strong
+                >exercitationem eaque, facilis deleniti omnis, quos</strong
+              >
+              beatae facere officia inventore tempor beatae facere officia
+              inventore tempor <em>laborum. Labore,</em>
+              <u>voluptas Lorem ipsum</u>, dolor sit amet consectetur
+              adipisicing elit
+            </p>
+            <img
+              src="https://images.unsplash.com/photo-1602922960044-d48ce791d3c0?q=80&w=1165&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=" mountain image"
+              width="40%"
+              height="60%"
+            />
+            <video
+              height="300px"
+              width="500px"
+              id="video-player"
+              preload="auto"
+              controls
+
+            >
+          <source src="ai-resume (2).mp4" type="video/mp4" /> 
+          </video>
+          </article>
+        </div>
+      </section>
+      <!-- footer section -->
+      <footer class="footer-section">this is footer</footer>
+    </section>
+
+    <!-- JavaScript Code: -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+            var videoPlayer = document.getElementById('video-player').currentTime = 10;
+          // JavaScript to handle video player actions can be added here
+          
+           // videoPlayer.play();
+        });
+      
+    </script>
+  </body>
+</html>

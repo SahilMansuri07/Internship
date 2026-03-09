@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+ 
+<body>
+    <h2> Hello, <span id="emaildis"></span><br>
+    <span id="roledis"></span>
+    </h2>
+    <table id="doctorTable" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Speciality</th>
+            </tr>
+        </thead>
+        <tbody id="doctorTableBody">
+ 
+        </tbody>
+    </table>
+ 
+    <script src="https://cdn.datatables.net/2.3.6/js/dataTables.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableBody = document.getElementById("doctorTableBody")
+            let doctors = JSON.parse(localStorage.getItem("registerdata")) || []
+            let counter = 1
+            
+            function getCookie(name) {
+                const cookies = document.cookie.split("; ");
+                for (let c of cookies) {
+                    if (c.startsWith(name + "=")) {
+                        return c.substring(name.length + 1);
+                    }
+                }
+                return null;
+            }
+            const email = getCookie("userEmail");
+            const role = getCookie("userRole");
+            
+            document.getElementById("roledis").innerText =  role;
+            // document.getElementById("roledis");
+            
+
+            console.log(decodeURIComponent(email));
+            console.log(role);
+
+
+            doctors.forEach((element , index) => {
+ 
+                if (element.role == 1) {
+                    return
+                }
+                tableBody.innerHTML += `<tr><td>${index+1}</td><td>${element.fname}</td><td>${element.lname}</td><td>${element.email}</td><td>${element.speciality}</td></tr>`
+                counter += 1
+            });
+        })
+        $(document).ready(function () {
+            $('#doctorTable').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+ 
+</body>
+ 
+</html>

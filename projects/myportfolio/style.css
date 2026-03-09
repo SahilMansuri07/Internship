@@ -1,0 +1,363 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #080808;
+    font-family: Arial, Helvetica, sans-serif;
+    color:  white;
+}
+
+header {
+    background-color: #1B1B1B;
+    color: #9C9C9C;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+
+}
+
+.rightnav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rightnav img {
+    border-radius: 50%;
+}
+
+
+.menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #9C9C9C;
+}
+
+.leftnav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: large;
+
+}
+
+.leftnav ul a {
+    text-decoration: none;
+    color: #9C9C9C;
+    margin-right: 20px;
+}
+
+
+.main-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.details {
+    width: 50%;
+    font-size: large;
+}
+
+.details h3 {
+    color: #73bd37;
+}
+
+.details p {
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.profile {
+    width: 40%;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 10%;
+    max-width: 100%;
+    height: auto; 
+}
+
+.skills {
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 90px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.skills svg {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.skills svg:hover {
+    transform: scale(1.1);
+}
+
+.aboutme {
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 90px;
+    margin-top: 10px;
+}
+
+
+.contactme {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contactme h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form label {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #73bd37;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form input[type="text"],.form input[type="email"],.form textarea {
+    padding: 12px 15px;
+    border: 2px solid #73bd37;
+    border-radius: 6px;
+    background-color: #1B1B1B;
+    color: white;
+    font-size: 15px;
+     outline: none;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus {
+    border-color: #9C9C9C;
+    background-color: #222;
+}
+
+.form input[type="text"]::placeholder,
+.form input[type="email"]::placeholder,
+.form textarea::placeholder {
+    color: #666;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form button {
+    padding: 12px 30px;
+    background-color: #73bd37;
+    color: #080808;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    background-color: #5fa030;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(115, 189, 55, 0.4);
+}
+
+.profile img:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(115, 189, 55, 0.4);
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .leftnav ul {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        background-color: rgba(20, 24, 26, 0.96);
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navlinks.active {
+        display: flex; 
+        align-items: center;
+    }
+    
+    .navlinks li {
+        margin-top: 12px;
+    }
+    .menu {
+        display: block;
+    }
+    
+    .details, .profile {
+        width: 100%;
+    }
+    
+    .details img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    .main-section {
+        margin: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .details {
+        font-size: medium;
+    }
+    
+    .details p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .contactme {
+        padding: 40px 15px;
+    }
+    
+    .form {
+        gap: 15px;
+    }
+    
+    .form input[type="text"],
+    .form input[type="email"],
+    .form textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .form label {
+        font-size: 14px;
+    }
+    
+    .skills{
+        display: grid;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1B1B1B;
+    color: #9C9C9C;
+    padding: 60px 20px 30px;
+    margin-top: 50px;
+    border-top: 2px solid #73bd37;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #73bd37;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.footer-section ul li a {
+    color: #9C9C9C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #73bd37;
+}
+
+.footer-section ul li:not(a) {
+    color: #9C9C9C;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+.footer-bottom p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 15px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-section h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}

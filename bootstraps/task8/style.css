@@ -1,0 +1,161 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.imagediv{
+    background-image: url(images/bg_2.jpg);
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 100px 100px 100px 150px rgba(0, 0, 0, 0.5);
+}
+
+.imagediv img{
+    width: 200px;
+    height: 200px;
+}
+
+.logo img{
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+.mainheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text{
+    text-align: center;
+    
+}
+.text h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: 5px;
+    
+}
+
+.text p{
+    font-size: 1rem;
+    color: white;
+    line-height: 30px;
+
+}
+
+.button{
+    padding: 10px;
+    width: 100px;
+    background-color: rgb(120, 25, 208);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    margin-bottom : 100px ;
+}
+
+.button:hover{
+    padding: 11px;
+    background-color: rgb(103, 18, 183);
+}
+
+.header-h1{
+    text-align: center;
+    margin: 80px;
+}
+
+.main-section{
+    padding: 25px;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 70px;
+}
+
+.card{
+    display: flex;
+    gap: 17px;
+}
+.card-image img{
+    height: 250px;
+    width: 250px;
+}
+
+
+.main-section p{
+    color: gray;
+    line-height: 20px;
+}
+
+.above-section{
+    text-align: center ;
+    color:rgba(255, 255, 255, 0.858);
+    align-items: center ;
+    background-color: rgb(41, 41, 41);
+    font-size: large;
+   
+}
+
+.about {
+  padding: 58px 16px;
+} 
+
+.footer{
+    padding-top: 20px;
+    background-color: black;
+    color: rgb(116, 110, 110);
+    text-align: center;
+    font-size: medium;
+    padding: 12px;
+
+}
+
+.footer h5{
+    color: blueviolet;
+}
+
+.footer h3{
+    margin-bottom: 70px;
+}
+
+
+@media ( max-width : 786px){
+
+   .cards{
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        justify-content: center;
+        align-items: center;
+        min-width: 90%;
+    }
+    
+
+}
+
+@media ( max-width : 380px){
+
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        justify-content: center;
+        align-items: center;
+        min-width: 90%;
+    }
+    
+    .card{
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+   
+}

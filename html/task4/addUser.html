@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 : Creating Form with JavaScript Validations</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <form class="userForm" action="Home.html" method="post"  onchange="Validation()">
+        <h1>Add User form</h1>
+        
+        <table >
+            <tr>
+                <td>
+                <label for="userid">UserId:</label>
+                </td>
+                <td>
+                    <input type="text" id="userid" name="userid" placeholder="Enter Userid " ><br>
+                    <span id="useriderr"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="username">Username:</label>
+                </td>
+                <td>
+                    <input type="text" id="username" name="username" placeholder="Enter username " ><br>
+                    <span id="usernameerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="abcd@gmail.com"><br>
+                    <span id="emailerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Stream">Stream : </label></td>
+                <td>
+                    <select name="Stream" id="stream">
+                        <option value="">Select Stream</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    </select>
+                    <span id="streamerr"></span>
+                    <br><br>
+                </td>
+            </tr>
+            
+            <tr >
+                   <td></td> 
+                <td> <input type="checkbox" id="rememberme" name="checkbox" ><label for="rememberme">Remember Me</label></td>
+            </tr>
+          
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit" onclick="Validation(event)" >Submit </button>
+                <input type="Reset">
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+
+    function Validation(event) {
+        var userid = document.getElementById("userid").value;
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var stream = document.getElementById("stream").value;
+
+        console.log("Validation function called");
+        console.log("Username: " , username);
+        console.log("Email: " + email);
+        console.log("Stream: " + stream);
+        console.log("UserId: " + userid);
+
+        isValid = true;
+
+        if(userid == ""){
+            document.getElementById("useriderr").innerHTML = "UserId cannot be empty";
+            isValid = false;
+        }else{
+            document.getElementById("useriderr").innerHTML = "";
+        }
+
+        if(username.length > 10){
+            document.getElementById("usernameerror").innerHTML = "First Name must be within 10 characters";
+            isValid = false;
+            
+        }else if(username == ""){
+            document.getElementById("usernameerror").innerHTML = "First Name cannot be empty";
+            isValid = false;
+            
+        }else{
+            document.getElementById("usernameerror").innerHTML = "";
+        }
+        
+        //  email with regex patter validation 
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(email.length > 50){
+            document.getElementById("emailerror").innerHTML = "Email must be within 50 characters";
+            isValid = false;
+        }else if(!emailPattern.test(email)){
+            document.getElementById("emailerror").innerHTML = "Invalid Email Format";
+            isValid = false;
+        }else{
+            document.getElementById("emailerror").innerHTML = "";
+        }
+        
+        
+         const addUserData = {
+            userid: userid,
+            username: username,
+            email: email,
+            stream: stream,
+           };
+
+        const jsonData = JSON.stringify(addUserData);
+        console.log("Registration Data in JSON Format:", jsonData);
+
+        const StoredData = localStorage.setItem("registerdata", jsonData);
+    
+    }
+</script>
+</html>
+</script>

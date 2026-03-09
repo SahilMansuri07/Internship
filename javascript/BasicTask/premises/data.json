@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "sahil mansuri",
+      "age": 20,
+      "course": "BCA",
+      "year": 2,
+      "city": "Ahmedabad",
+      "marks": 78
+    },
+    {
+      "id": 2,
+      "name": "purvil modi",
+      "age": 19,
+      "course": "BSc IT",
+      "year": 1,
+      "city": "Surat",
+      "marks": 85
+    },
+    {
+      "id": 3,
+      "name": "mahipal singh",
+      "age": 21,
+      "course": "BCom",
+      "year": 3,
+      "city": "Vadodara",
+      "marks": 72
+    },
+    {
+      "id": 4,
+      "name": "aryan parmar",
+      "age": 20,
+      "course": "BBA",
+      "year": 2,
+      "city": "Rajkot",
+      "marks": 90
+    }
+  ]
+}

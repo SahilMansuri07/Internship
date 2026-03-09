@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 : Creating Form with JavaScript Validations</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+        
+    </style>
+</head>
+<body>
+    
+    <form class="registrationForm" action="Home.html" method="post"  onsubmit="Validation()">
+        <h1>Login form</h1>
+        <table  align="center" >
+            <tr>
+                <td>
+                <label for="firstname">Username:</label>
+                </td>
+                <td>
+                    <input type="text" id="username" name="username" placeholder="Enter firstname " >
+                    <span id="usernameerror"></span>
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="abcd@gmail.com">
+                    <span id="emailerror"></span>
+             
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password : </label></td>
+                <td><input type="password" id="password" name="password" placeholder="Enter password">
+                    <span id="passworderror"></span>
+           
+                </td>
+            </tr>
+            
+            <tr >
+                  
+                <td colspan="2"> <input type="checkbox" id="rememberme" name="checkbox" ><label for="rememberme">Terms and Conditions Apply</label></td>
+            </tr>
+          
+        <tr>
+            <td colspan="2" >
+                <button type="submit" onclick="Validation(event)" >Submit </button>
+                <input type="Reset">
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    
+    function Validation(event) {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        
+
+        console.log("Validation function called");
+        console.log("Username: " , username);
+        console.log("Email: " + email);
+        console.log("Password: " + password);
+        
+        let getData = localStorage.getItem("registerdata");
+        let dataParsed = JSON.parse(getData);
+       
+        console.log(dataParsed.email)
+        if(email==dataParsed.email && fname==dataParsed.fname){
+            window.location("home.html")
+        }else{
+            event.preventDefault();
+            alert("invailid email or username")
+        }
+
+        isValid = true;
+
+        if( username.length > 10){
+            document.getElementById("usernameerror").innerHTML = "First Name must be within 10 characters";
+            isValid = false;
+            
+        }else if(username == "" ){
+            document.getElementById("usernameerror").innerHTML = "First Name cannot be empty";
+            isValid = false;
+            
+        }else{
+            document.getElementById("usernameerror").innerHTML = "";
+        }
+        
+        //  email with regex patter validation 
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(email.length > 50){
+            document.getElementById("emailerror").innerHTML = "Email must be within 50 characters";
+            isValid = false;
+        }else if(!emailPattern.test(email)){
+            document.getElementById("emailerror").innerHTML = "Invalid Email Format";
+            isValid = false;
+        }else{
+            document.getElementById("emailerror").innerHTML = "";
+        }
+        
+        // Password validation
+        var passwordPattern = /^[a-zA-Z]+[0-9]$/
+        if(passwordPattern.test(password)){
+            document.getElementById("passworderr").innerHTML = "Password must contains char and numbers";
+            isValid = false;
+        }else if(password.length < 8){  
+            document.getElementById("passworderror").innerHTML = "Password must be at least 8 characters";
+            isValid = false;
+        }else{
+            document.getElementById("passworderror").innerHTML = "";
+        }
+        
+
+        if(!isValid){
+            event.preventDefault();
+        }else{
+            event.submit();
+        }
+
+        
+    }
+</script>
+</html>
+</script>

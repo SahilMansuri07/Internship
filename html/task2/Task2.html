@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2 - Creating a Form for South Park</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- main section -->
+    <section class="Main-section">
+      <header class="Main-header">
+        <h1>WELLCOME TO SOUTH PARK!</h1>
+        <hr />
+        <p>Tell us about your experience with South Park</p>
+      </header>
+
+      <section class="Form-section">
+        <article>
+          <form action="#" method="post" class="form">
+            <table align="center"   width="80%">
+              <tr>
+                <td><label for="fname">*First Name:</label></td>
+                <td><input type="text" id="fname" name="fname" placeholder="Enter Your Name" /></td>
+              </tr>
+
+              <tr>
+                <td><label for="Email"> *Email :</label></td>
+                <td><input type="email" id="Email" name="Email" placeholder="Enter Your Email" /></td>
+              </tr>
+              <tr>
+                <td><label for="Age">*Age:</label></td>
+                <td><input type="text" id="Age" name="Age" placeholder="Enter Your Age" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Watch"> How do you watch South Park?</label>
+                </td>
+                <td>
+                  <select id="Watch" name="Watch" >
+                    <option value="select">Select an Option</option>
+                    <option value="TV">TV</option>
+                    <option value="Online Streaming">Online Streaming</option>
+                    <option value="DVD">DVD</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="Review"> How much do you like south Park ?</label>
+                </td>
+                <td>
+                    <input type="radio" id="like1" name="like1" value="I Love it"/>
+                    <label for="like1">I Love it</label><br>
+                    <input type="radio" id="like2" name="like1" value="It's Good"/>
+                    <label for="like2">It's Good</label><br>
+                    <input type="radio" id="like3" name="like1" value="It's Okay"/>
+                    <label for="like3">It's Okay</label><br>
+                    <input type="radio" id="like4" name="like1" value="Not Really"/>
+                    <label for="like4"> Not Really</label><br>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="seasones">How many seasons have you watched?</label></td>
+                <td>
+                  <select id="seasones" name="seasones">
+                    <option value="select">Select a Season</option>
+                    <option value="1">1 Season</option>
+                    <option value="2">2 Seasons</option>
+                    <option value="3">3 Seasons</option>
+                    <option value="4">4 Seasons</option>
+                    <option value="5">5+ Seasons</option>
+                  </select>
+                </td>
+              </tr>
+             <tr>
+                <td>
+                  <label for="who do you watch with">Who do you watch South Park with?</label><br>
+                   <label for="who do you watch with"> (Check all that apply)</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="Alone" name="Alone" value="Alone"/>
+                    <label for="Alone">Alone</label><br>
+                    <input type="checkbox" id="Friends" name="Friends" value="Friends"/>
+                    <label for="Friends">Friends</label><br>
+                    <input type="checkbox" id="Family" name="Family" value="Family"/>
+                    <label for="Family">Family</label><br>
+                    <input type="checkbox" id="Partner" name="Partner" value="Partner"/>
+                    <label for="Partner">Partner</label><br>
+                    <input type="checkbox" id="Other" name="Other" value="Other"/>
+                    <label for="Other">Other</label><br>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="Feedback">Tell us more about your favorite character(s) or episode(s):</label></td>
+                <td>
+                  <textarea id="Feedback" name="Feedback" rows="10" cols="30" placeholder="Top Comments"></textarea>
+              </tr>
+               <td><input type="button" value="Submit"></td>
+
+            </table>
+          </form>
+        </article>
+      </section>
+    </section>
+    
+    <!-- footer -->
+    <footer style="text-align: center;"> ©2023</footer>
+  </body>
+</html>

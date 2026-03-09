@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3 - creating Form with all Attribute</title>
+
+    <!-- Applied CSS Styles -->
+    <style>
+        body {
+            background-color: #e0e0e0;
+        }
+      .form-section {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        border: 2px solid #000;
+        background: white;
+        padding: 20px;
+      }
+
+    
+
+      .form input {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="form-section">
+      task 3 - creating Form with all Attribute
+      <h1>Registration Form</h1>
+      <form
+        action="welcome.html"
+        onsubmit="Submitdata()"
+        method="POST"
+        class="form"
+        autocomplete="on"
+        novalidate
+        
+      >
+        <label for="username">*Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter Your Username"
+          required
+          maxlength="15"
+          minlength="5"
+          size="40"
+          /><br /><br />
+          
+          <label for="password">*Password:</label>
+          <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter Your Password"
+          required
+          maxlength="20"
+          minlength="8"
+          size="40"
+          /><br /><br />
+          
+          <label for="email">*Email:</label>
+          <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter Your Email"
+          size="40"
+          required
+          /><br /><br />
+          <label for="age">*Age:</label>
+          <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Enter Your Age"
+          required
+          min="1"
+          max="90"
+          /><br /><br />
+          
+          <label for="website">Comapany Website:</label>
+          <input
+          type="url"
+          id="website"
+          name="website"
+          placeholder="Enter Your Website URL"
+          size="40"
+          /><br /><br />
+          <label for="tickmarks">Rating:</label>
+          <input
+          type="range"
+          id="tickmarks"
+          name="tickmarks"
+          min="1"
+          max="10"
+          list="markers"
+          size="40"
+          />
+          <datalist id="tickmarks">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+              <option value="6"></option>
+              <option value="7"></option>
+              <option value="8"></option>
+              <option value="9"></option>
+              <option value="10"></option>
+            </datalist>
+            <span> 1 to 10 </span>
+            <br /><br />
+            
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color" size="40" /><br /><br />
+            
+            
+            <label for="date">Birth Date:</label>
+        <input type="date" id="date" name="date" size="40" /><br /><br />
+
+        <label for="datetime-local"> Date & Time:</label>
+        <input
+          type="datetime-local"
+          id="datetime-local"
+          name="datetime-local"
+        /><br /><br />
+
+        <label for="tel">Phone Number:</label>
+        <input
+          type="tel"
+          id="tel"
+          name="tel"
+          placeholder="Enter Your Phone Number"
+          size="40"
+        /><br /><br />
+
+        <label for="search">Search:</label>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search Here"
+          size="40" 
+        /><br /><br />
+
+        <label for="gender"> Female : </label>
+        <input type="radio" name="gender" id="female" value="Female" />
+        <label for="male"> male : </label>
+        <input type="radio" name="gender" id="male" value="male" /><br /><br />
+
+        <label for="hobby">Hobbies:</label>
+        <input
+          type="checkbox"
+          id="hobby"
+          name="hobby1"
+          value="reading"
+        />Reading
+        <input
+          type="checkbox"
+          id="hobby"
+          name="hobby2"
+          value="traveling"
+        />Traveling
+        <input
+          type="checkbox"
+          id="hobby"
+          name="hobby3"
+          value="gaming"
+        />Gaming<br /><br />
+
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="fileupload" size="40" /><br /><br />
+
+        <label for="comments">Comments:</label><br />
+        <textarea
+          id="comments"
+          name="comments"
+          rows="4"
+          cols="50"
+          placeholder="Enter your comments here..."
+        ></textarea
+        ><br /><br />
+
+        <input type="hidden" name="form-id" value="123" />
+
+        <button type="submit">Submit</button>
+        <input type="reset" value="Reset" />
+      </form>
+    </section>
+  </body>
+</html>
+<!-- Java script Logic to store data in local storage -->
+<script>
+
+  function Submitdata() {
+   
+    // Get data from Input fields
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const age = document.getElementById("age").value;
+    const website = document.getElementById("website").value;
+    const datetime = document.getElementById("datetime-local").value;
+    const tel = document.getElementById("tel").value;
+
+    const gender = document.getElementsByName("gender");
+    let gendervalue = "";
+    for(let i =0; i<gender.length; i++){
+        if(gender[i].checked){
+            gendervalue = gender[i].value;
+        }
+    }
+    console.log(gendervalue,"gender log");
+    debugger;
+
+
+    
+    const hobby = document.getElementById("hobby").value;
+    const comments = document.getElementById("comments").value;
+    const file = document.getElementById("file").value;
+    const tickmarks = document.getElementById("tickmarks").value;
+    const color = document.getElementById("color").value;
+    const date = document.getElementById("date").value;
+
+    // set data in local storage
+    localStorage.setItem("tickmarks", tickmarks);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    localStorage.setItem("email", email);
+    localStorage.setItem("age", age);
+    localStorage.setItem("website", website);
+    localStorage.setItem("tel", tel);
+    localStorage.setItem("datetime-local", datetime);
+    localStorage.setItem("comments", comments);
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("hobby", hobby);
+    localStorage.setItem("date", date);
+    localStorage.setItem("file", file);
+    localStorage.setItem("color", color);
+  }
+</script>

@@ -1,0 +1,20 @@
+body{
+ background-color: antiquewhite;
+ text-align: center;
+ justify-items: center;
+
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+}
+
+select , input[type="reset"] {
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+}

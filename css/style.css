@@ -1,0 +1,476 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+section{
+    margin: 25px;
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+.top-header{
+display: flex;
+padding: 20px;
+}
+
+.top-header div{
+  padding: 5px;
+  float: left;
+  width: calc(33.33% - 10px);
+  text-align: center;
+  border: 2px solid black;
+}
+
+.logo-header img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.name-header{
+font-size: 40px;
+font-weight: 700;
+}
+.office-header .box{
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    border: 2px solid black;
+}
+.bottom-header{
+display: flex;
+padding: 10px;
+gap: 26px;
+}
+.bottom-header input[type = "text"]{
+    width: 40%;
+}
+ 
+.basic-details {
+    padding: 25px 10px;
+}
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .label {
+    width: 120px;
+    
+  }
+
+  /* Name Fields */
+  .name-fields {
+    display: flex;
+    width: 60%;
+    
+  }
+
+  .name-field {
+      position: relative;
+      flex: 1;
+      
+    }
+    .name-field input[type = "text"]{
+        height: 28px;
+        width: 100%;
+  }
+
+
+  .name-field span {
+    position: absolute;
+    top: -18px;
+    left: 5px;
+    font-size: 12px;
+  }
+
+  /* Cell Number Boxes */
+  .cell-boxes {
+    display: flex;
+  }
+
+  .cell-box {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000;
+  }
+
+  /* Email Line */
+input[type="checkbox"] {
+  width: 25px; /* Desired width */  height: 25px; /* Desired height *//* Optional: Adjust margin for alignment with text */  margin: 5px; 
+}
+
+.email-line{
+    width: 100%;
+    height: 22px;
+    border: none;
+    border-bottom: 1px solid black;
+    
+  }
+
+  /* Checkboxes */
+  .options  {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .option , .labels {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .checkbox  {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #000;
+  }
+
+  .long-line {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #000;
+    height: 18px;
+  }
+
+
+  .flex-label {
+   margin: auto;
+  }
+
+
+.student-extra-details {
+ 
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* Top Line */
+.head-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+   padding: 10px 40px;
+}
+
+.line-input {
+  display: inline-block;
+  border:none;
+  border-bottom: 1px solid black;
+  height: 16px;
+  vertical-align: middle;
+}
+
+hr{
+    border: 2px solid black;
+}
+.line-input.long { width: 250px; }
+.line-input.small { width: 120px; }
+
+/* Main Content */
+.content-area {
+  display: flex;
+  gap: 10px;
+ 
+  padding: 10px 40px;
+}
+
+/* Left Form */
+.left-form {
+  width: 45%;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: auto;
+}
+
+.form-row label {
+  width: 160px;
+}
+
+.full-input {
+  width: 100%;
+  border: 1px solid black;
+  height: 24px;
+}
+
+.medium-input {
+  min-width: 350px;
+  border: 1px solid black;
+  height: 24px;
+}
+
+/* DOB + Mobile Boxes */
+.dob-boxes,
+.mobile-boxes {
+  display: flex;
+}
+
+.dob-boxes input,
+.mobile-boxes input {
+  width: 30px;
+  gap: 3px;
+  height: 22px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* Right Address */
+.right-form {
+  width: 30%;
+  border: 1px solid black;
+  padding: 10px;
+  
+  height: 130px;
+  width: 500px;
+}
+
+.address-line {
+  border-bottom: 1px solid black;
+  height: 18px;
+  margin: 6px 0;
+}
+
+.address-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.city-line {
+  display: inline-block;
+  width: 100px;
+  border-bottom: 1px solid black;
+}
+
+.pin-box {
+  display: inline-block;
+  width: 60px;
+  border: 1px solid black;
+  height: 18px;
+}
+
+/* Photo */
+.photo-box {
+  width: 25%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.photo-header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.photo-body {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  font-style: italic;
+}
+   
+.academic-section {
+  
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+
+}
+
+/* Academic layout */
+.academic-content {
+  display: flex;
+  gap: 10px;
+}
+
+.left-academic {
+  width: 60%;
+}
+
+.right-academic {
+  width: 40%;
+}
+
+/* Rows */
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.form-row label {
+  min-width: 200px;
+}
+
+/* Inputs */
+.full-input {
+  width: 100%;
+  height: 22px;
+  border: 1px solid black;
+}
+
+.medium-input {
+  width: 200px;
+  height: 22px;
+  border: 1px solid black;
+}
+
+.small-input {
+  width: 60px;
+  height: 22px;
+  border: 1px solid black;
+}
+
+.line-input {
+  width: 180px;
+  border: none;
+  border-bottom: 1px solid black;
+  height: 20px;
+}
+
+.alterinput{
+ display: flex;
+ width: 75%;
+}
+
+.alterinput label{
+    margin-left: 41px;
+    min-width: 210px;
+}
+
+.center-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Checkboxes */
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+ }
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: black;
+}
+
+/* GATE box */
+.gate-box {
+  border: 1px solid black;
+  padding: 6px;
+}
+
+.gate-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+/* Survey */
+.survey-section {
+ 
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.survey-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.survey-row {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+
+.payment-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.l-payment-flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+}
+
+.survey-row label:first-child {
+  min-width: 300px;
+}
+
+.bottom-line{
+   text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.labelsinput{
+  padding : 20px;
+}
+
+.label-payment{
+    
+     font-weight: bold;
+    font-size: larger;
+    margin: 100px;
+
+}
+
+.payment-section{
+    display: flex;
+    padding: 10px;
+    min-height: 200px;
+}
+
+.leftpayment {
+   margin-right: 10px;
+    border-right: 2px solid black;
+    min-width: 30%;
+  }
+  
+  
+  .rightpayment{
+  min-width: 70%;
+    
+    text-align: center;
+}
+
+.heading{
+    text-align: center;
+    
+}
+
+.details{
+    padding-left: 10px;
+    max-width: 80%;
+}

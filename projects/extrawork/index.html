@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extra Work</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="index.html" class="form" onsubmit="addData(event)">
+        <h1>smart Expence Tracker</h1>
+
+        <div class="main-section">
+            <div class="row">
+
+                <label for="title">Title</label>
+                <input type="text"  name="title" id="title" placeholder="Enter Expence Title Here">
+            </div>
+            
+            <div class="row">
+                <label for="amount">Amount</label>
+                <input type="text"  name="amount" id="amount" placeholder="Enter Expence amount Here">
+            </div>
+
+            <div class="row">
+                <label for="date">Date</label>
+                <input type="date"  name="date" id="date" placeholder="Enter Expence date Here">
+            </div>
+
+            <div class="row">
+                <label for="category"> Category</label>
+                <select name="category" id="category">
+                    <option value="food" name="food">Food</option>
+                    <option value="travel" name="travel">Travel</option>
+                    <option value="Shopping" name="Shopping">Shopping</option>
+                    <option value="bus" name="bus">Bus</option>
+                    <option value="others" name="others">Others</option>
+                </select>
+            </div>
+
+            <button type="submit" value="Add Expences">Add Expence </button>
+            <input type="reset" onclick= "resetData()">
+        </div>
+    </form>
+
+   <div id="cardsContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

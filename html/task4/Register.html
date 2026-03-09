@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 : Creating Form with JavaScript Validations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form class="registrationForm" action="Login.html" method="post" id="formID"  onchange="Validation()">
+        <h1>Registration form</h1>
+        <table  align="center" >
+            <tr>
+                <td>
+                <label for="firstname">First Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="fname" name="fname" placeholder="Enter firstname " >
+                    <label>(Max 50 characters Allowed)</label><br>
+                    <span id="fnameerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lastname">Last Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="lname" name="lname" placeholder="Enter lastname " >
+                    <label>(Max 50 characters Allowed)</label><br>
+                    <span id="lnameerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="abcd@gmail.com"><br>
+                    <span id="emailerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="mobile">Mobile Number : </label></td>
+                <td>
+                    <input type="tel" id="mobile" name="mobile" placeholder="7864xxxxxx">
+                    <label>(10 Digits Allowed)</label><br>
+                    <span id="mobileerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender :</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <span id="gendererror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">Date of Birth :</label>
+                </td>
+                <td>
+                    <input type="date" id="dob" name="dob"><br>
+                    <span id="doberror"></span>
+                    <br><br>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address :</label>
+                </td>
+                <td>
+                    <textarea id="address" name="address" rows="4" cols="30"></textarea><br>
+                    <span id="addresserror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pincode"> Pin Code </label></td>
+                <td>
+                    <input type="text" id="pincode" name="pincode" placeholder="560068"><label>(6 Numbers Allowed)</label><br>
+                    <span id="pincodeerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="city">City</label></td>
+
+                <td><input type="text" id="city" name="city" placeholder="Banglore"><label>(Max 50 Characters Allowed)</label><br>
+                    <span id="cityerror"></span>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="state">State :</label>
+                </td>
+                <td><input type="text" id="state" name="state" placeholder="Karnataka"><label>(Max 50 Characters Allowed)</label><br>
+                    <span id="stateerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">Country :</label>
+                </td>
+                <td>
+                    <input type="text" id="country" name="country" placeholder="India"><label>(Max 50 Characters Allowed)</label><br>
+                    <span id="countryerror"></span>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="hobbies">Hobbies:</label></td>
+                <td><input type="checkbox" name="hobbies" id="Drawing" value="Drawing"> Drawing <br>
+                <input type="checkbox" name="hobbies" id="Singing" value="Singing"> Singing <br>
+                <input type="checkbox" name="hobbies" id="Dancing" value="Dancing"> Dancing <br>
+                <input type="checkbox" name="hobbies" id="Sketching" value="Sketching"> Sketching <br>
+                <input type="checkbox" name="hobbies" id="Other" value="Other"> Other
+                <input type="text" id="otherHobby" name="otherHobby" placeholder="Ex Teaching">
+                 <label>(10 Digits Allowed)</label><br>      
+                 <span id="checkboxerr"></span> 
+            </td>
+            </tr>
+            <tr>
+                <td><label for="Qualification">Qualification:</label></td>
+                <td><input type="checkbox" id="Highschool" name="Qualification" value="Highschool">High school(10th) <br>
+                <input type="checkbox" id="HigherSchool" name="Qualification" value="HigherSchool">Higher school(12th) <br>
+                <input type="checkbox" id="Graduate" name="Qualification" value="Graduate">Graduation(bachelours) <br>
+                <input type="checkbox" id="PostGraduate" name="Qualification" value="PostGraduate">Post Graduate(Master's) <br>
+                <input type="checkbox" id="phd" name="Qualification" value="phd"> Phd <br>
+                <span id="qualifyerr"></span>
+            </td>
+            <tr>
+                <td><label for="Courses">Courses:</label></td>
+                <td>
+                <input type="radio" id="bca" name="Courses" value="bca">BCA(Bachelor of Computer Application) <br>
+                <input type="radio" id="b.com" name="Courses" value="b.com">B.Com(Bachelor of Commerce) <br>
+                <input type="radio" id="b.sc" name="Courses" value="b.sc">B.Sc(Bachelor of Science) <br>
+                <input type="radio" id="ba" name="Courses" value="ba">BA(Bachelor of Arts) <br>
+                <input type="radio" id="mca" name="Courses" value="mca">MCA(Master of Computer Application) <br>
+                <input type="radio" id="m.com" name="Courses" value="m.com">M.Com(Master of Commerce) <br>
+                <input type="radio" id="m.sc" name="Courses" value="m.sc">M.Sc(Master of Science) <br>
+                <input type="radio" id="ma" name="Courses" value="ma">MA(Master of Arts) <br>
+                <span id="courseerr"></span>
+            </td>
+            </tr>
+            </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="Submit" onclick="Validation(event)" >Submit </button>
+                <input type="Reset">
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    
+    function Validation() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobile").value;
+        var pincode = document.getElementById("pincode").value;
+        var city = document.getElementById("city").value;
+        var country = document.getElementById("country").value;
+        var state = document.getElementById("state").value;
+
+        let genderSelected = ""
+        var gender = document.getElementsByName("gender");
+        for(let i=0; i<gender.length; i++){
+            if(gender[i].checked){
+                genderSelected = gender[i].value;
+            }
+        }
+
+
+        let courseSelected = ""
+        var course = document.getElementsByName("Courses");
+
+        for(let i=0; i<course.length; i++){
+            if(course[i].checked){
+                courseSelected = course[i].value;
+            }
+        }
+        
+
+        isValid = true;
+
+        if( fname.length > 10){
+            document.getElementById("fnameerror").innerHTML = "First Name must be within 10 characters";
+            isValid = false;
+        }else if(fname == ""){
+            document.getElementById("fnameerror").innerHTML = "First Name cannot be empty";
+            isValid = false;
+        }else{
+            document.getElementById("fnameerror").innerHTML = "";
+         }
+
+        if(lname.length > 10){
+            document.getElementById("lnameerror").innerHTML = "Last Name must be within 10 characters";
+            isValid = false;
+            
+        }else if(lname == ""){
+            document.getElementById("lnameerror").innerHTML = "Last Name cannot be empty";
+            isValid = false;
+            
+        }else{
+            document.getElementById("lnameerror").innerHTML = "";
+        }
+        
+        //  email with regex patter validation 
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(email.length > 50){
+            document.getElementById("emailerror").innerHTML = "Email must be within 50 characters";
+            isValid = false;
+        }else if(!emailPattern.test(email)){
+            document.getElementById("emailerror").innerHTML = "Invalid Email Format";
+            isValid = false;
+        }else{
+            document.getElementById("emailerror").innerHTML = "";
+        }
+        
+        //  mobile validation
+        if(mobile.length != 10){
+            document.getElementById("mobileerror").innerHTML = "Mobile number must be 10 digits";
+            isValid = false;
+        }else{
+            document.getElementById("mobileerror").innerHTML = "";
+        }
+        
+        
+        //  gender validation
+
+        if (!gender) {
+            document.getElementById("gendererror").innerHTML = "Please select a gender";
+            isValid = false;
+        } else {
+            document.getElementById("gendererror").innerHTML = "";
+        }
+        
+        // date validation
+        var dob = document.getElementById("dob").value;
+        if (dob === "") {
+            document.getElementById("doberror").innerHTML = "Date of Birth cannot be empty";
+            isValid = false;
+        } else {
+            document.getElementById("doberror").innerHTML = "";
+        }
+
+        
+        // checkbox validation
+        var hobbies = document.getElementsByName("hobbies");
+
+
+        // need explainations   
+        const values = Array.from(hobbies).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        console.log(hobbies);
+        console.log(values);
+        if (hobbies.length === 0) {
+            document.getElementById("checkboxerr").innerHTML = "Please select at least one hobby";
+            isValid = false;
+        }else{
+            document.getElementById("checkboxerr").innerHTML = "";
+        }
+        
+        var qualify = document.getElementsByName("Qualification");
+        const qualifyValues = Array.from(qualify).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        if (qualify.length === 0) {
+            document.getElementById("qualifyerr").innerHTML = "Please select at least one qualification";
+            isValid = false;
+        }else{
+            document.getElementById("qualifyerr").innerHTML = "";
+        }
+        
+        if (course.length === 0) {
+            document.getElementById("courseerr").innerHTML = "Please select at least one course";
+            isValid = false;
+        }else{
+            document.getElementById("courseerr").innerHTML = "";
+        }
+        
+        if(pincode == ""){
+            document.getElementById("pincodeerror").innerHTML = "Pin code cannot be empty";
+            isValid = false;
+        }else if(pincode.length != 6 ){
+            document.getElementById("pincodeerror").innerHTML = "Invalid Length of Pin code";
+            isValid = false;
+        }else{
+            document.getElementById("pincodeerror").innerHTML = "";
+        }
+        
+        if(city.length > 10){
+            document.getElementById("cityerror").innerHTML = "City name must be within 10 characters";
+            isValid = false;
+        }else if(city == ""){
+            document.getElementById("cityerror").innerHTML = "City name cannot be empty";
+            isValid = false;
+        }else{
+            document.getElementById("cityerror").innerHTML = "";
+        }
+        
+        if(country.length > 10){
+            document.getElementById("countryerror").innerHTML = "Country name must be within 10 characters";
+            isValid = false;
+        }else if(country == ""){
+            document.getElementById("countryerror").innerHTML = "Country name cannot be empty";
+            isValid = false;
+        }else{
+            document.getElementById("countryerror").innerHTML = "";
+        }
+        
+        if(state.length > 10){
+            document.getElementById("stateerror").innerHTML = "State name must be within 10 characters";
+            isValid = false;
+        }else if(state == ""){
+            document.getElementById("stateerror").innerHTML = "State name cannot be empty";
+            isValid = false;
+        }else{  
+            document.getElementById("stateerror").innerHTML = "";
+        }
+        console.log(isValid);
+        
+        if(!isValid){
+            
+            event.preventDefault();
+        }else{
+            event.submit();
+        }
+        
+        const registerdata = {
+            fname: fname,
+            lname: lname,
+            email: email,
+            mobile: mobile,
+            pincode: pincode,
+            city: city,
+            country: country,
+            state: state,
+            gender:genderSelected,
+            qualify:qualifyValues,
+            course:courseSelected, 
+            hobbies:values
+
+
+
+        };
+
+        const jsonData = JSON.stringify(registerdata);
+        console.log("Registration Data in JSON Format:", jsonData);
+
+        const StoredData = localStorage.setItem("registerdata", jsonData);
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Menia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <section class="main-section">
+           
+                <div class="header">
+                    <h1>Movies Mania</h1>
+                    <h3>Incredible movies</h3>
+                </div>
+                <div class="buttons">
+                    <button class="all" onclick="fetchData()" id="all">All</button>
+                    <button class="action" onclick="filterData('Action')" id="action">Action</button>
+                    <button class="thriller" onclick="filterData('Thriller')" id="thriller">Thriller</button>
+                    <button class="comedy" onclick="filterData('Comedy')" id="comedy">Comedy</button>
+                    <button class="drama" onclick="filterData('Drama')" id="drama">Drama</button>
+                    <button class="horror" onclick="filterData('Horror')" id="horror">Horror</button>
+                </div>
+
+                <div class="search">      
+                    <input type="text" class="search" id="search" placeholder="Seach Movies...">
+                    <select name="movieselection" id="movieselection" class="select">
+                        <option value="filter"> Filter</option> 
+                        <option value="new release">NewRelease</option>
+                        <option value="old is gold">Old Is Gold</option>
+                    </select>
+                </div>
+        </section>
+
+        <section>
+            <div id="container">
+                
+            </div>
+        </section>
+<script src="script.js"></script>
+</body>
+</html>

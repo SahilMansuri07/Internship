@@ -1,0 +1,44 @@
+body{
+    background-color: #fff;
+}
+
+
+.main-section{
+    padding: 20px;
+}
+.form{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+
+    background-color: rgb(245, 250, 255);
+    
+}
+
+.row {
+   height: 25px;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.row input[type="text"] , input[type="date"] , select{
+    width: 70%;
+}
+
+.row label{
+    font-weight: bold;
+    font-size: large;
+    margin-left: 20px;
+}
+
+.card-title{
+
+}
+
+.container{
+    padding: 10px;
+    border: 1px solid black;
+    width: 30%;
+    display: grid;
+}

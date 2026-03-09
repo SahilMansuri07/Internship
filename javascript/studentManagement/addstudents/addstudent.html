@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Add Students</title>
+</head>
+<body>
+    <div class="main_section">
+        <h1> Add Students </h1>
+        <form action="#" method="post" class="form" onsubmit="handleSubmit(event)">
+
+            <label for="name">Full Name : </label>
+            <input type="text" name="name" id="name"><br><br>
+
+            <label for="enroll">enroll No : </label>
+            <input type="text" name="enroll" id="enroll"><br><br>
+
+            <label for="email">Email :</label>
+            <input type="text" name="email" id="email"><br><br>
+
+            <label for="phone"> Phone :</label>
+            <input type="text" name="phone" id="phone"><br><br>
+
+            <label for="address"> address :</label>
+            <input type="address" name="address" id="address"><br><br>
+
+            <label for="course">Course :</label>
+            <select name="course" id="course">
+                <option value="select">Choose A Course</option>
+                <option value="MCA">MCA</option>
+                <option value="BCA">BCA</option>
+                <option value="MSCIT">MSCIT</option>
+                <option value="MCOM">MCOM</option>
+                <option value="BCOM">BCOM</option>
+                <option value="CA">CA</option>
+            </select><br><br>
+            
+            <label for="division">Division :</label>
+             <select name="division" id="division">
+                <option value="select">Choose A Division</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+            </select><br><br>
+
+            
+            <input type="submit" value="Add Student">
+            <input type="reset">
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

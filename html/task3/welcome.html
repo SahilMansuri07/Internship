@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff8f8;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to the Website</h1>
+    <!-- table showing submitted form data: -->
+    <table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Age</th>
+        <th>Website</th>
+        <th>Rating</th>
+        <th>Color</th>
+        <th>Birthdate</th>
+        <th>Date & Time</th>
+        <th>Phone Number</th>
+        <th>Hobbies</th>
+        <th>Gender</th>
+        <th>Uploaded File</th>
+        <th>Comments</th>
+
+    </tr>
+      <tr>
+          <td id="username"></td>
+          <td id="email"></td>
+        <td id="password"></td>
+        <td id="age"></td>
+        <td id="website"></td>
+        <td id="tickmarks"></td>
+        <td id="color"></td>
+        <td id="date"></td>
+        <td id="datetime-local"></td>
+        <td id="tel"></td>
+        <td id="hobby"></td>
+        <td id="gender"></td>
+        <td id="file"></td>
+        <td id="comments"></td>
+
+      </tr>
+      
+
+    </table>
+    <!-- javascript to retrieve data from local storage and display it in the table -->
+    <script>
+      window.onload = function () {
+        // setting the data 
+          document.getElementById("email").innerText = localStorage.getItem("email");
+          document.getElementById("username").innerText = localStorage.getItem("username");
+        document.getElementById("password").innerText = localStorage.getItem("password");
+        document.getElementById("age").innerText = localStorage.getItem("age");
+        document.getElementById("website").innerText = localStorage.getItem("website");
+        document.getElementById("tel").innerText = localStorage.getItem("tel");
+        document.getElementById("comments").innerText = localStorage.getItem("comments");
+        document.getElementById("datetime-local").innerText = localStorage.getItem("datetime-local");
+        document.getElementById("gender").innerText = localStorage.getItem("gender");
+        document.getElementById("hobby").innerText = localStorage.getItem("hobby");
+        document.getElementById("file").innerText = localStorage.getItem("file");
+        document.getElementById("tickmarks").innerText = localStorage.getItem("tickmarks");
+        document.getElementById("color").innerText = localStorage.getItem("color");
+        document.getElementById("date").innerText = localStorage.getItem("date");
+
+
+        // for verification purpose in console
+        console.log("Retrieved username from localStorage:", localStorage.getItem("username"));
+        console.log("Retrieved password from localStorage:", localStorage.getItem("password"));
+        console.log("Retrieved age from localStorage:", localStorage.getItem("age"));
+        console.log("Retrieved email from localStorage:", email);
+        console.log("Retrieved website from localStorage:", localStorage.getItem("website"));
+        console.log("Retrieved phone from localStorage:", localStorage.getItem("tel"));
+        console.log("Retrieved comments from localStorage:", localStorage.getItem("comments"));
+        console.log("Retrieved datetime from localStorage:", localStorage.getItem("datetime-local"));
+        console.log("Retrieved gender from localStorage:", localStorage.getItem("gender"));
+        console.log("Retrieved hobby from localStorage:", localStorage.getItem("hobby"));
+        console.log("Retrieved file from localStorage:", localStorage.getItem("file"));
+        console.log("Retrieved rating from localStorage:", localStorage.getItem("tickmarks"));
+        console.log("Retrieved color from localStorage:", localStorage.getItem("color"));
+        console.log("Retrieved date from localStorage:", localStorage.getItem("date"));
+        
+     };
+    </script>
+  </body>
+</html>

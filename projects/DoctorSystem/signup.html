@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6 : Creating Doctor System</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right , rgb(86, 133, 139), rgb(0, 215, 215));
+            margin: 0;
+            padding: 20px;
+        }
+        .registrationForm{
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            max-width: 450px;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .registrationForm input[type="text"], .registrationForm input[type="tel"], .registrationForm input[type="email"] ,.registrationForm input[type="date"] ,.registrationForm input[type="password"]{
+            width: 100%;
+            height: 38px;
+            padding: 8px;
+            margin: 3px 0;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .registrationForm span{
+            font-size: 13px;
+            margin-top: 2px;
+            display: block;
+        }
+
+        span{
+        color: #FFD700;
+        }
+
+        .registrationForm tr{
+            text-align: left;
+        
+        }
+
+        .registrationForm input[type="submit"]{
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        }
+        .registrationForm input[type="submit"]:hover{
+        background-color: #45a049;
+        }
+        .registrationForm table{
+        width: 100%;
+        }
+        .registrationForm td{
+        padding: 5px;
+
+        }
+
+        .registrationForm h1{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 0;
+        }
+
+        td:first-of-type {
+        width: 35%;
+        text-align: right;
+        align-items: center;
+        padding-right: 15px;
+        font-size: 14px;
+        }
+
+        td:last-of-type {
+        width: 65%;
+        }
+
+        button , input[type="reset"]{
+        width: 100px;
+        height: 38px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-right: 5px;
+        }
+
+        button,input[type="reset"]:hover{
+            background-color: #555;
+        }
+
+        .registrationForm input[type="checkbox"]{
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .dropdown-button {
+            width: 100%;
+            height: 38px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            display: none;
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checkbox-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .checkbox-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            font-size: 14px;
+            flex: 1;
+            margin: 0;
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid white;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        span{
+        color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    
+    <form class="registrationForm"  method="post" id="formID">
+        <h1>Registration form</h1>
+        <table width="100%" align="center" >
+            <tr>
+                <td>
+                <label for="firstname">First Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="fname" name="fname" placeholder="Enter firstname " >
+                   
+                    <span id="fnameerror"></span>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lastname">Last Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="lname" name="lname" placeholder="Enter lastname " >
+                   
+                    <span id="lnameerror"></span>
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="abcd@gmail.com">
+                    <span id="emailerror"></span>
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password"> Password :</label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" placeholder="Enter password " >
+                
+                    <span id="passworderr"></span>
+                
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="mobile">Mobile Number : </label></td>
+                <td>
+                    <input type="tel" id="mobile" name="mobile" placeholder="7864xxxxxx">
+                    
+                    <span id="mobileerror"></span>
+                  
+                </td>
+            </tr>
+         
+            <tr>
+                <td>
+                    <label>Services:</label>
+                </td>
+                <td>
+                    <div class="dropdown-container">
+                        <button type="button" class="dropdown-button" id="dropdownBtn" onclick="toggleDropdown(event)">
+                            Select Services
+                            <span class="dropdown-arrow" id="arrow"></span>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="Cardiology" name="services" value="Cardiology">
+                                <label for="Cardiology">Cardiology</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="Dermatology" name="services" value="Dermatology">
+                                <label for="Dermatology">Dermatology</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="Neurology" name="services" value="Neurology">
+                                <label for="Neurology">Neurology</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="Pediatrics" name="services" value="Pediatrics">
+                                <label for="Pediatrics">Pediatrics</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="Orthopedics" name="services" value="Orthopedics">
+                                <label for="Orthopedics">Orthopedics</label>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="serviceserror"></span>
+                </td>
+            </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="Submit" onclick="Validation(event)" >Submit </button>
+                <input type="Reset" >
+            </td>
+        </tr>
+    </table>
+    <script>
+        
+        function toggleDropdown(event) {
+            event.preventDefault();
+            var dropdownMenu = document.getElementById("dropdownMenu");
+            var arrow = document.getElementById("arrow");
+            dropdownMenu.classList.toggle("active");
+            arrow.classList.toggle("active");
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function(event) {
+            var dropdownContainer = document.querySelector(".dropdown-container");
+            if (!dropdownContainer.contains(event.target)) {
+                var dropdownMenu = document.getElementById("dropdownMenu");
+                var arrow = document.getElementById("arrow");
+                dropdownMenu.classList.remove("active");
+                arrow.classList.remove("active");
+            }
+        });
+
+        // Update button text when checkboxes are selected
+        document.querySelectorAll('input[name="services"]').forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                var selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+                                            .map(cb => cb.value);
+                var dropdownBtn = document.getElementById("dropdownBtn");
+                
+                if (selectedServices.length === 0) {
+                    dropdownBtn.innerHTML = 'Select Services <span class="dropdown-arrow" id="arrow"></span>';
+                } else if (selectedServices.length === 1) {
+                    dropdownBtn.innerHTML = selectedServices[0] + ' <span class="dropdown-arrow active" id="arrow"></span>';
+                } else {
+                    dropdownBtn.innerHTML = selectedServices.length + ' services selected <span class="dropdown-arrow active" id="arrow"></span>';
+                }
+            });
+        });
+
+        function Validation(event) {
+            event.preventDefault();
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var password = document.getElementById("password").value;
+    
+            isValid = true;
+    
+            if( fname.length > 10){
+                document.getElementById("fnameerror").innerHTML = "First Name must be within 10 characters";
+                isValid = false;
+            }else if(fname == ""){
+                document.getElementById("fnameerror").innerHTML = "First Name cannot be empty";
+                isValid = false;
+            }else{
+                document.getElementById("fnameerror").innerHTML = "";
+             }
+    
+            if(lname.length > 10){
+                document.getElementById("lnameerror").innerHTML = "Last Name must be within 10 characters";
+                isValid = false;
+                
+            }else if(lname == ""){
+                document.getElementById("lnameerror").innerHTML = "Last Name cannot be empty";
+                isValid = false;
+                
+            }else{
+                document.getElementById("lnameerror").innerHTML = "";
+            }
+            
+            //  email with regex patter validation 
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(email.length > 50){
+                document.getElementById("emailerror").innerHTML = "Email must be within 50 characters";
+                isValid = false;
+            }else if(!emailPattern.test(email)){
+                document.getElementById("emailerror").innerHTML = "Invalid Email Format";
+                isValid = false;
+            }else{
+                document.getElementById("emailerror").innerHTML = "";
+            }
+            
+            //  mobile validation
+            if(mobile.length != 10){
+                document.getElementById("mobileerror").innerHTML = "Mobile number must be 10 digits";
+                isValid = false;
+            }else{
+                document.getElementById("mobileerror").innerHTML = "";
+            }
+
+            var passwordPattern = /^[a-zA-Z]+[0-9]$/
+            if(passwordPattern.test(password)){
+                document.getElementById("passworderr").innerHTML = "Password must contains char and numbers";
+                isValid = false;
+            }else if(password.length < 8){  
+                document.getElementById("passworderr").innerHTML = "Password must be at least 8 characters";
+                isValid = false;
+            }else{
+                document.getElementById("passworderr").innerHTML = "";
+            }
+            
+
+        
+            // Validate services checkboxes
+            var servicesCheckboxes = document.querySelectorAll('input[name="services"]:checked');
+            if(servicesCheckboxes.length === 0){
+                document.getElementById("serviceserror").innerHTML = "Please select at least one service";
+                isValid = false;
+            }else{
+                document.getElementById("serviceserror").innerHTML = "";
+            }
+           
+            console.log(isValid);
+            
+            if(!isValid){
+                event.preventDefault();
+            }else{
+                // Get existing data from localStorage
+                let backupdata = localStorage.getItem("registerdata");
+                backupdata = backupdata ? JSON.parse(backupdata) : [];
+                
+                // Get selected services
+                var selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+                                            .map(checkbox => checkbox.value)
+                                            .join(", ");
+                
+                const registerdata = {
+                    fname: fname,
+                    lname: lname,
+                    email: email,
+                    mobile: mobile,
+                    password: password,
+                    speciality: selectedServices,
+                    role : "doctor",
+                };
+                
+                // Add new data to array
+                backupdata.push(registerdata);
+                
+                // Store entire array back to localStorage
+                const jsonData = JSON.stringify(backupdata);
+                console.log("Registration Data in JSON Format:", jsonData);
+                localStorage.setItem("registerdata", jsonData);
+                console.log("Data stored successfully!");
+                window.location.href = "Login.html";
+                event.target.submit();
+                
+                 }
+        }
+    </script>
+</body>
+
+</html>

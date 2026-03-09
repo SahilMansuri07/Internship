@@ -1,0 +1,59 @@
+body {
+
+  background-image: linear-gradient(to bottom right, rgb(7, 75, 62), rgb(105, 70, 105));
+  font-family: sans-serif , Arial;
+}
+
+.Main-section{
+    margin: 10px;
+    padding: 10px;    
+}
+
+.Main-header{
+    text-align: center;
+    border: 2px solid #e4841d;
+    border-radius: 10px;
+    background: #e4841d;
+    color : white;
+}
+
+.Main-header hr{
+    border: 1px solid white;
+    width: 80%;
+}
+
+.Form-section{    
+    background: rgb(24, 152, 114);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+td:first-of-type{
+    text-align: right;
+    padding-right: 10px;
+    width: 50%;
+    color: white;
+}
+.Form-section form{
+    margin: 20px;
+    color: white;
+    padding: 20px;    
+}
+.Form-section input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(206, 206, 31);
+}
+
+input[type="button"] {
+    background-color: #e4841d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

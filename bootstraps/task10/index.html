@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- --- bootstrap css link --- -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome 6 Free CDN -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <!-- bootstrap JS link  -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+    ></script>
+    <!-- font awasome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- --- main section start-- -->
+    <section class="overflow-x-hidden">
+        <!-- --- navbaar section start-- -->
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <div class="col-sm-12 col-lg-4">
+            <!-- --- logo image --- -->
+            <img
+              src="images/image.png"
+              class="image-fluid"
+              style="width: 200px; height: 70px"
+              alt=""
+            />
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon text-white"
+              ><i class="fas fa-bars"></i
+            ></span>
+
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="col-sm-4  col-lg-12 d-flex justify-content-center">
+              <div class="navbar-nav gap-4 text-center">
+                <div
+                  class="text-white border border-secondary text-center rounded-5 m-3 p-1"
+                >
+                  <i class="fas fa-phone"></i> &nbsp;
+                  <span>CALL US +1(646) 759 9933</span>
+                </div>
+                <div class="mt-2 dropdown">
+                  <div
+                    class="dropdown-toggle text-white fs-5"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    Courses
+                  </div>
+                  <ul class=" dropdown-menu">
+                    <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                    <li><a class="dropdown-item" href="#">Python</a></li>
+                    <li><a class="dropdown-item" href="#">HTML </a></li>
+                  </ul>
+                </div>
+                <a class="mt-2 nav-link text-white" href="#">SECURITY AWARENESS </a>
+                <a class="mt-2 nav-link text-white" href="#">PRICING</a>
+                <div class=" mt-2 bg-light border border-secondary"></div>
+                <p class="mt-2 nav-link text-white" href="#">JOHN SMITH</p>
+                <img
+                  src="images/johnKaPhoto.png"
+                  class="image-fluid d-none d-lg-inline"
+                  style="width: 70px; height: 50px"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+        <!-----  Sidebar section start ---->
+      <section class="row">
+        <div class="col-lg-3 d-block  col-sm-12">
+          <img
+            src="images/johnKaPhoto.png"
+            class="image-fluid m-5 text-center p-2"
+            style="width: 250px; height: 200px"
+            alt=""
+          />
+          <p class="fw-bold m-2">MANAGE MY PROFILE</p>
+          <div class="p-2">
+            <a href="#" class="m-3 text-decoration-none">MY TRAININGS </a
+            ><br /><br />
+            <a href="#" class="m-3 mb-5 text-decoration-none">MY PERSONAL PROFILE</a>
+            <hr class="text-secondary">
+          </div>
+          <!-----  Sidebar links  ---->
+      
+          <p class="fw-bold m-2">MANAGE MY COMPANY</p>
+          <div class="p-2">
+            <a href="#" class="m-3 text-decoration-none">COMPANY SETTINGS </a>
+            <br /><br />
+            <a href="#" class="m-3 text-decoration-none"> USER GROUPS </a>
+            <br /><br />
+            <a href="#" class="m-3 text-decoration-none">
+              NOTIFICATION SETTINGS </a
+            ><br /><br />
+            <a href="#" class="m-3 text-decoration-none">
+              TRAINNGS / AWARENESS SCHEDULE</a
+            ><br /><br />
+            <a href="#" class="m-3 text-decoration-none"> USERS </a><br /><br />
+            <a href="#" class="m-3 text-decoration-none"> ADD NEW USERS </a
+            ><br /><br />
+            <a href="#" class="m-3 text-decoration-none"> SUBSCRIPTION </a
+            ><br /><br />
+          </div>
+        </div>
+
+    <!-----  Profile form   ---->
+
+        <div class="bg-light col-12 col-lg-9 col-sm-12">
+            <h3 class="p-4">MY PERSONAL PROFILE </h3>
+            <form class=" p-5 needs-validation m-3 bg-white" novalidate>
+                <div class="row">
+                    <div class="mb-3 col-12 col-lg-6">
+                        <label for="exampleFormControlInput1" class="form-label text-secondary ">First Name :</label>
+                    <div class="input-group mb-3">
+                    <input type="text" class="form-control " id="exampleFormControlInput1" placeholder="john" required>
+                       <span class="input-group-text">
+                        <i class="fa fa-user" style="font-size:24px"></i>
+                        </span>
+                          <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>  
+                </div>
+                <div class="mb-3 col-12 col-lg-6">
+                    <label for="exampleFormControlInput1" class="form-label text-secondary ">Last Name :</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="smith" required>
+                     <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                 <div class="mb-3 col-12 col-lg-6">
+                     <label for="exampleFormControlInput1" class="form-label text-secondary ">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                     <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3 col-12 col-lg-6">
+                    <label for="exampleFormControlInput1" class="form-label text-secondary ">User Name :</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="JohnSmith" required>
+                     <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                    
+                </div>
+                <div class="mb-3 col-12 col-lg-6">
+                    <label for="exampleFormControlInput1" class="form-label text-secondary ">Country name:</label>
+                    <select class="form-control"  id="exampleFormControlInput1" name="Country" id="Country" required> Country 
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Affrica">Affrica</option>
+                        <option value="AUSTRALIA">AUSTRALIA</option>
+                    </select>
+                     <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                </div>
+                <div class="mb-3 col-lg-6 ">
+                    <label for="formFile" class="form-label text-secondary ">Profile Image</label>
+                    <input class="form-control" type="file" id="formFile" required>
+                     <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="row col-lg-6">
+                    <p class="mt-4 mb-4">If You Want To change your password , fill iin the following fields : </p>
+                    <div class="mb-3 col-lg-6">
+                        <label for="exampleInputPassword1" class="form-label text-secondary ">New Password</label>
+                        <div class="input-group mb-3">
+                     <input type="password" class="form-control" id="exampleInputPassword1" required>  
+                       <span class="input-group-text">
+                           <i class="fa fa-lock" style="font-size:24px"></i>
+                        </span>
+                         <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                                             
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="exampleInputPassword1" class="form-label text-secondary ">Repeat New Password</label>
+                        <div class="input-group mb-3">
+                     <input type="password" class="form-control" id="exampleInputPassword1" required>  
+                       <span class="input-group-text">
+                           <i class="fa fa-lock" style="font-size:24px"></i>
+                        </span>
+                    </div>
+                </div>
+                </div>
+            <button type="submit" class="btn p-3 btn-success" data-toggle="" data-target="#exampleModal">Save Changes</button>  
+            </form>
+        </div>
+    </section>
+              
+    <!-----  modelbox  ---->
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Save Changes 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="reset()"  data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+  </body>
+  <script>
+    (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+const formid = document.getElementById("formid")
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }else{
+       event.preventDefault();
+       const successModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+                    successModal.show()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+function reset(){
+    window.location.reload();
+}
+  </script>
+</html>

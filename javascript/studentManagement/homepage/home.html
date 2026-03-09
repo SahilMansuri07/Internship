@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<header class="navbar">
+  <h2>Student Manager</h2>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="../addstudents/addstudent.html">Add Student</a>
+    <a href="../login_page/login.html">Logout</a>
+  </nav>
+</header>
+
+  <div class="table-container">
+  <h2 class="h2_details">Student Details</h2>
+  <div>
+    <select onclick="sortName(event)" name="orderby" id="orderby">
+      <option value="">SortBy</option>
+      <option value="asc">OrderByASC</option>
+      <option value="desc">OrderByDesc</option>
+    </select>
+    
+  </div>
+  <div class="count">
+    <span>Total Students : </span>
+    <span id="count"></span>
+  </div>
+  <div class="Search">
+    <label for="search"></label>
+    <input type="text" name="search" id="search" placeholder="Search Student Here......" onkeyup="searchStudent(this.value)">
+  </div>
+  </div>
+
+  <table id="studentTable">
+    <thead id="tableHeader">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Enroll No</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Division</th>
+        <th>address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+  <p id="noDataMsg">No records found</p>
+    <tbody id="studentBody">
+      <!-- Students will be added here dynamically -->
+
+    </tbody>
+  </table>
+</div>
+</body>
+<script src="home.js"></script>
+</html>

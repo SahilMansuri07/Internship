@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit.css"> 
+    <title>Update Students</title>
+</head>
+<body>
+    <div class="main_section">
+        <h1> Update Students </h1>
+        <form action="#" method="post" class="form" onsubmit="updateStudent(event)">
+
+            <label for="name">Full Name : </label>
+            <input type="text" name="name" id="name"><br><br>
+
+            <label for="enroll">enroll No : </label>
+            <input type="text" name="enroll" id="enroll"><br><br>
+
+            <label for="email">Email :</label>
+            <input type="text" name="email" id="email"><br><br>
+
+            <label for="phone"> Phone :</label>
+            <input type="text" name="phone" id="phone"><br><br>
+
+            <label for="address"> address :</label>
+            <input type="address" name="address" id="address"><br><br>
+
+            <label for="course">Course :</label>
+            <select name="course" id="course">
+                <option value="select">Choose A Course</option>
+                <option value="MCA">MCA</option>
+                <option value="BCA">BCA</option>
+                <option value="MSCIT">MSCIT</option>
+                <option value="MCOM">MCOM</option>
+                <option value="BCOM">BCOM</option>
+                <option value="CA">CA</option>
+            </select><br><br>
+            
+            <label for="division">Division :</label>
+            <input type="text" name="division" id="division"><br><br>
+
+            
+            <input type="submit" value="Update Student">
+            <input type="reset">
+        </form>
+    </div>
+</body>
+<script src="edit.js"></script>
+</html>

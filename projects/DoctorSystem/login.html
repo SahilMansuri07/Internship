@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 : Creating Form with JavaScript Validations</title>
+   
+    <style>
+       body{
+            background-image: linear-gradient(to right , rgb(86, 133, 139), rgb(0, 215, 215));
+            margin: 0;
+            padding: 20px;
+        }
+        .registrationForm{
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            max-width: 450px;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .registrationForm input[type="text"], .registrationForm input[type="tel"], .registrationForm input[type="email"] ,.registrationForm input[type="date"] ,.registrationForm input[type="password"]{
+            width: 100%;
+            height: 38px;
+            padding: 8px;
+            margin: 3px 0;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .registrationForm span{
+            font-size: 13px;
+            margin-top: 2px;
+            display: block;
+        }
+
+        span{
+        color: #FFD700;
+        }
+
+        .registrationForm tr{
+            text-align: left;
+        
+        }
+
+        .registrationForm input[type="submit"]{
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        }
+        .registrationForm input[type="submit"]:hover{
+        background-color: #45a049;
+        }
+        .registrationForm table{
+        width: 100%;
+        }
+        .registrationForm td{
+        padding: 5px;
+
+        }
+
+        .registrationForm h1{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 0;
+        }
+
+        td:first-of-type {
+        width: 35%;
+        text-align: right;
+        align-items: center;
+        padding-right: 15px;
+        font-size: 14px;
+        }
+
+        td:last-of-type {
+        width: 65%;
+        }
+
+        button , input[type="reset"]{
+        width: 100px;
+        height: 38px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-right: 5px;
+        }
+
+        button,input[type="reset"]:hover{
+            background-color: #555;
+        }
+
+        span{
+        color: #FFD700;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <form class="registrationForm" method="post" id="loginForm"  onchange="Validation()">
+        <h1>Login form</h1>
+        <table  align="center" >
+            <tr>
+                <td>
+                <label for="firstname">Username:</label>
+                </td>
+                <td>
+                    <input type="text" id="username" name="username" placeholder="Enter firstname " >
+                    <span id="usernameerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="abcd@gmail.com">
+                    <span id="emailerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password : </label></td>
+                <td><input type="password" id="password" name="password" placeholder="Enter password">
+                    <span id="passworderror"></span>  
+                </td>
+            </tr>
+            
+            <tr >
+                <td colspan="2"> <input type="checkbox" id="rememberme" name="checkbox" ><label for="rememberme">Terms and Conditions Apply</label></td>
+            </tr>
+          
+        <tr>
+            <td colspan="2" >
+                <button type="submit" onclick="Validation(event)" >Submit </button>
+                <input type="Reset">
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    
+    function Validation(event) {
+        var username = document.getElementById("username").value;
+     
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+
+        console.log("Validation function called");
+        console.log("Username: " , username);
+        console.log("Email: " + email);
+        console.log("Password: " + password);
+        
+        
+
+
+        let getData = localStorage.getItem("registerdata");
+        let dataParsed = JSON.parse(getData);
+        console.log(dataParsed)
+       
+        
+        let err = true
+
+
+         dataParsed.forEach(element => {
+    if(element.email == email && element.password == password){
+
+       
+
+        let maxAge = 60 * 60 * 24; // 1 day
+
+        document.cookie = `userEmail=${encodeURIComponent(element.email)}; path=/; max-age=${maxAge}; SameSite=Lax`;
+        document.cookie = `userRole=${encodeURIComponent(element.role)}; path=/; max-age=${maxAge}; SameSite=Lax`;
+
+ 
+
+
+        if(element.role == "doctor"){
+            window.location.href = "home.html";
+        }else{
+            window.location.href = "welcome.html";
+        }
+        }
+        err = false
+        });
+        if(err){
+            alert("recheck your data")
+        }
+         
+
+        // if(email==foundRegistration.email && password==foundRegistration.password){
+        //     window.location.href = "home.html"
+        //     isValid = false;
+        // }else{
+        //     event.preventDefault();
+        //     alert("invailid email or username")
+        //     isValid = false;
+        // }
+
+
+
+        if( username.length > 10){
+            document.getElementById("usernameerror").innerHTML = "First Name must be within 10 characters";
+            isValid = false;
+            
+        }else if(username == "" ){
+            document.getElementById("usernameerror").innerHTML = "First Name cannot be empty";
+            isValid = false;
+            
+        }else{
+            document.getElementById("usernameerror").innerHTML = "";
+        }
+        
+        //  email with regex patter validation 
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(email.length > 50){
+            document.getElementById("emailerror").innerHTML = "Email must be within 50 characters";
+            isValid = false;
+        }else if(!emailPattern.test(email)){
+            document.getElementById("emailerror").innerHTML = "Invalid Email Format";
+            isValid = false;
+        }else{
+            document.getElementById("emailerror").innerHTML = "";
+        }
+        
+        // Password validation
+        var passwordPattern = /^[a-zA-Z]+[0-9]$/
+        if(passwordPattern.test(password)){
+            document.getElementById("passworderr").innerHTML = "Password must contains char and numbers";
+            isValid = false;
+        }else if(password.length > 8){  
+            document.getElementById("passworderror").innerHTML = "Password must be at least 8 characters";
+            isValid = false;
+        }else{
+            document.getElementById("passworderror").innerHTML = "";
+        }
+        
+
+        if(!isValid){
+            alert("invailid")
+            event.preventDefault();
+        }else{
+            event.target.submit();
+        }
+
+    }
+    
+</script>
+</html>
+</script>
