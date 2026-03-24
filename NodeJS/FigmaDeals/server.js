@@ -3,7 +3,6 @@ const express = require('express');
 const path = require("path");
 const db = require('./config/database')
 const credential = require('./config/credential');
-const { error } = require('console');
 // Initialize express app
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -11,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set("views", path.join(__dirname, "templates"));
-
+    
 
 //to use json data
 app.use(express.json());
